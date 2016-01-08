@@ -120,7 +120,7 @@
 \* ------------------------------------------------------ */
     var favicon = {
         load_favicon: function() {
-            favicon.change("favicon.ico");
+            favicon.change("../img/ico/thecompiler.ico");
         },
         change: function(iconURL, optionalDocTitle) {
             if (arguments.length == 2) {
@@ -356,39 +356,14 @@
 /* ------------------------------------------------------ *\
     [Methods] goSectioMethod
 \* ------------------------------------------------------ */
-    var goSectionMethod = {
-        goSection_home: function() {
-        }
-    }
-/* ------------------------------------------------------ *\
-    [Methods] addAttrForSectionMethod
-\* ------------------------------------------------------ */
-    var addAttrForSectionMethod = {
-        addAttrForSection_home: function() {
-        }
-    }
-/* ------------------------------------------------------ *\
-    [Methods] removeAttrForSectionMethod
-\* ------------------------------------------------------ */
-    var removeAttrForSectionMethod = {
-        removeAttrForSection_home: function() {
-        }
-    }
-/* ------------------------------------------------------ *\
-    [Methods] addStylesForSectionMethod
-\* ------------------------------------------------------ */
-    var addStylesForSectionMethod = {
-        addStylesSection_home: function() {
-        }
-    }
-/* ------------------------------------------------------ *\
-    [Methods] cleanStylesForSectionMethod
-\* ------------------------------------------------------ */
-    var cleanStylesForSectionMethod = {
-        cleanStylesForSection: function() {
-            cleanStylesForSectionMethod.cleanStylesSection_home();
+    var clickGoSectionsMethod = {
+        clickGo_home: function() {
+            //$('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            window.location = '../home';
         },
-        cleanStylesSection_home: function() {
+        clickGo_contact: function() {
+            //$('body,html').animate({ scrollTop: "0" }, 999, 'easeOutExpo' );
+            window.location = '../contacto';
         }
     }
 /* ------------------------------------------------------ *\
@@ -405,11 +380,33 @@
             dataMainCompilerProjectsAttributes = [
                 ['div', {'id':domEl._main_compiler_app, 'class':''}, '', 1]
             ];
-            COR.appendMulti(domEl.div_recurrent, dataMainCompilerProjectsAttributes);
+            COR.appendMulti(domEl.div_recurrent_home, dataMainCompilerProjectsAttributes);
         },
         viewSectionHome: function() {
             viewSectionHomeMethod.recurrentSecionHome();
             viewSectionHomeMethod.loadTemplatesSectionHome();
+        }
+    }
+
+/* ------------------------------------------------------ *\
+    [Methods] viewSectionContactMethod
+\* ------------------------------------------------------ */
+    var viewSectionContactMethod = {
+        loadTemplatesSectionContact: function() {
+            //var nameproject;
+            //nameproject = projectsData.name;
+            //$('#label-name-project').html(nameproject);
+            COR.loadTemplate(tempsNames.app_thecompiler, domEl._main_compiler_app_name);
+        },
+        recurrentSecionContact: function() {
+            dataMainCompilerProjectsAttributes = [
+                ['div', {'id':domEl._main_compiler_app, 'class':''}, '', 1]
+            ];
+            COR.appendMulti(domEl.div_recurrent_contact, dataMainCompilerProjectsAttributes);
+        },
+        viewSectionContact: function() {
+            viewSectionContactMethod.recurrentSecionContact();
+            viewSectionContactMethod.loadTemplatesSectionContact();
         }
     }
 /* ------------------------------------------------------ *\
@@ -420,6 +417,23 @@
             removeRecurrentsMethod.removeRecurrents_home();
         },
         removeRecurrents_home: function() {
+        }
+    }
+/* ------------------------------------------------------ *\
+    [Methods] currentSectionMethod
+\* ------------------------------------------------------ */
+    var currentSectionMethod = {
+        currentSection_home: function() {
+            $('head title#head-change-section-title').html('WEB | Home');
+            $('#label-name-project').html('Inicio');
+        },
+        currentSection_contact: function() {
+            $('head title#head-change-section-title').html('WEB | Contacto');
+            $('#label-name-project').html('Contacto');
+        },
+        remove_currentSection: function() {
+            //$(domEl.goSection_index).removeClass('current');
+            //$(domEl.goSection_agencies_news).removeClass('current');
         }
     }
 /* ------------------------------------------------------ *\

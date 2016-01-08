@@ -28,5 +28,6 @@ $(document).ready(function() {
     /* ------------------------------------------------------ *\
         EVENT CONTROL
     \* ------------------------------------------------------ */
-
+    $('body').on('click', '#go-home', clickGoSectionsMethod.clickGo_home);
+    $('body').on('click', '#go-contact', clickGoSectionsMethod.clickGo_contact);
 });

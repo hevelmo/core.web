@@ -4,7 +4,8 @@ domEl = {
 	"_main_compiler_app_name":"#content-main-compiler-projects",
 	"div_hidden_inputs_session":"div#hidden-inputs-session",
 	"div_hidden_inputs_temporal":"div#hidden-inputs-temporal",
-	"div_recurrent":"div#content-temporal-interactive",
+	"div_recurrent_contact":"div#content-temporal-interactive-contact",
+	"div_recurrent_home":"div#content-temporal-interactive-home",
 	"recurrent_body":"body",
 	"recurrent_head":"head"
 };
