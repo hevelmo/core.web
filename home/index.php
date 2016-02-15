@@ -75,7 +75,9 @@
 		<script src="../lib/underscore.js"></script>
 		<script src="../lib/moment.js"></script>
 		<script src="../lib/accounting.js"></script>
-		<script src="../lib/finch.js"></script>
+		<?php /*
+        <script src="../lib/finch.js"></script>
+        */ ?>
 		<!-- HANDLEBARS -->
         <script src="../lib/handlebars.runtime.js"></script>
 		<!-- TEMPLATES -->
