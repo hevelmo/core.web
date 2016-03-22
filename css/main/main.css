@@ -1,0 +1,240 @@
+/* RESET */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline:none;
+}
+iframe{
+    border:0;
+}
+/* BASIC STYLES */
+.body{
+    padding-top:125px;
+}
+html, body {
+    height: 100%;
+}
+
+html, hmtl a{
+    width:100%;
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+a{
+    color:#5e5e5e;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition:all 0.3s ease 0.2s;
+    -moz-transition:all 0.3s ease 0.2s;
+    -ms-transition:all 0.3s ease 0.2s;
+    -o-transition:all 0.3s ease 0.2s;
+    transition:all 0.3s ease 0.1s;
+}
+a:hover{
+    text-decoration:none;
+}
+a:hover,
+a:active,
+a:focus{
+    outline: 0;
+    text-decoration:none;
+    color:#666666;
+}
+a img {
+    border: none;
+}
+a > img {
+    vertical-align: middle;
+}
+.gray-bg{
+    background:#e8e8e8;
+}
+.gray-text{
+    color:#bababa;
+}
+.lgray-bg{
+    background:#F9F9F9;
+}
+.dgray-bg{
+    background:#444;
+}
+.dark-bg{
+    color:#fff!important;
+}
+.dark-bg h1, .dark-bg h2, .dark-bg h3, .dark-bg h4, .dark-bg h5, .dark-bg h6{
+    color:#fff!important;
+}
+img {
+    max-width: 100%;
+}
+img, object, embed, audio, video {
+    max-width: 100%;
+}
+img {
+    height: auto;
+}
+strong, .strong {
+    font-weight: 700;
+}
+p {
+    margin: 0 0 20px;
+}
+i, em, .italic{
+    font-style:italic;
+}
+.uppercase{
+    text-transform:uppercase;
+}
+.align-left{
+    float:left;
+    margin:0 25px 0 0px!important;
+}
+.align-right{
+    float:right;
+    margin:0 0 0 25px!important;
+}
+.text-align-left {
+    text-align: left;
+}
+.text-align-center {
+    text-align: center;
+}
+.text-align-right {
+    text-align: right;
+}
+.color-text {
+    color: #ffffff;
+}
+.through{
+    text-decoration:line-through;
+}
+.border-radius{
+    -webkit-border-radius:100%;
+    -moz-border-radius:100%;
+    border-radius:100%;
+}
+::-webkit-input-placeholder {
+   color: #999;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #999;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #999;
+}
+
+:-ms-input-placeholder {
+   color: #999;
+}
+iframe{
+    border:0;
+}
+/* TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    margin:0 0 15px 0;
+    color:#333;
+    font-weight:400;
+    line-height:1.5em;
+}
+h1{
+    font-size:36px;
+}
+h2{
+    font-size:30px;
+}
+h2 small{
+    display:block;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    font-size:45%
+}
+h3{
+    font-size:24px;
+}
+h4{
+    font-size:16px;
+    letter-spacing:1px;
+    font-weight:700;
+    text-transform:uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+h5{
+    font-size:14px;
+    font-family: 'Roboto', sans-serif;
+}
+h6{
+    font-size:12px;
+}
+h1.short, h2.short, h3.short, h4.short, h5.short, h6.short, p.short{
+    margin-bottom:5px;
+}
+h1.spaced, h2.spaced, h3.spaced, h4.spaced, h5.spaced, h6.spaced {
+    margin-top: 22px;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
+    color:#333;
+    text-decoration:none;
+}
+.huge{
+    font-size:10em;
+}
+blockquote{
+    margin:30px 0;
+    padding:0 0 0 30px;
+    font-family: 'Playfair Display', serif;
+    border-left:3px solid #222;
+}
+blockquote p{
+    margin-bottom:0;
+    white-space:1px;
+    color:#777;
+    font-size:15px;
+}
+blockquote cite{
+    color:#999;
+    font-weight:700;
+    font-family:"Roboto", sans-serif;
+}
+blockquote cite:before{
+    content:"- ";
+}
+p{
+    margin:0 0 18px 0;
+}

@@ -1,0 +1,84 @@
+.navbar{
+    background:rgba(255,255,255,.9);
+    margin-bottom:0;
+    min-height:inherit;
+    position:relative;
+    z-index:3;
+    -webkit-border-radius:0;
+    border-radius:0;
+    height:52px;
+    box-shadow:0 1px 2px rgba(0,0,0,.1);
+    color:#777;
+    -webkit-transition:all 0.3s ease 0.2s;
+    -moz-transition:all 0.3s ease 0.2s;
+    -ms-transition:all 0.3s ease 0.2s;
+    -o-transition:all 0.3s ease 0.2s;
+    transition:all 0.3s ease 0.1s;
+}
+.sticky-header .navbar{
+    box-shadow:0 3px 5px rgba(0,0,0,.1);
+    background:#fff;
+    -webkit-transition: box-shadow 0.1s linear 0s, background 0.1s linear 0s;
+    -moz-transition: box-shadow 0.1s linear 0s, background 0.1s linear 0s;
+    -ms-transition: box-shadow 0.1s linear 0s, background 0.1s linear 0s;
+    -o-transition: box-shadow 0.1s linear 0s, background 0.1s linear 0s;
+    transition: box-shadow 0.1s linear 0s, background 0.1s linear 0s;
+}
+.site-header-wrapper{
+    position:fixed;
+    width:100%;
+    z-index:999;
+    left:0;
+    top:0;
+}
+@media (min-width: 1200px) {
+    body.boxed .site-header-wrapper{
+        width:1120px;
+        left:50%;
+        margin-left:-560px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    body.boxed .site-header-wrapper{
+        width:990px;
+        left:50%;
+        margin-left:-495px;
+    }
+    body.boxed .body{
+        max-width:990px;
+    }
+}
+
+.main-navigation{
+    display:block;
+}
+.main-navigation > ul{
+    margin:0;
+    list-style-type:none;
+}
+.main-navigation > ul > li{
+    font-weight:400;
+    font-size:15px;
+    position:relative;
+    display:inline-block;
+    margin-right:35px;
+}
+.main-navigation > ul > li > a{
+    display:block;
+    color:#666;
+    line-height:52px;
+}
+.main-navigation > ul > li:last-child{
+    margin-right:0;
+}
+.main-navigation > ul > li:last-child a{
+}
+.main-navigation > ul > li > a > i{
+    color:#999;
+}
+.sticky-header .main-navigation > ul > li > a > i{
+    color:#999;
+}
+.main-navigation > ul > li > a:hover{
+    text-decoration:none;
+}

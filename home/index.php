@@ -18,7 +18,7 @@
 
 		<title id="head-change-section-title">home</title>
 
-        <link href="../css/import.sitio.css" rel="stylesheet" type="text/css" />
+        <link href="../css/import.css" rel="stylesheet" type="text/css" />
 
         <script>
             var nav = navigator.appName;
@@ -54,9 +54,30 @@
             }
         </script>
 	</head>
-	<body>
-        <a id="go-home">Inicio</a>
-        <a id="go-contact">Contacto</a>
+	<body class="body">
+        <!--<a id="go-home">Inicio</a>
+        <a id="go-contact">Contacto</a>-->
+        <div class="site-header-wrapper">
+            <!-- Content Navbar -->
+            <div class="navbar">
+                <div class="container sp-cont">
+                    <div class="site-logo">
+                        <h1><a href="index.html"><img src="../img/logo/logo-large-2x.png" alt="Logo"></a></h1>
+                        <span class="site-tagline">Buying or Selling,<br>just got easier!</span>
+                    </div>
+                    <a class="visible-sm visible-xs" id="menu-toggle">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <!-- Main Navigation -->
+                    <nav class="main-navigation dd-menu toggle-menu" role="navigation">
+                        <ul class="sf-menu">
+                        </ul>
+                    </nav>
+                    <!-- End Main Navigation -->
+                </div>
+            </div>
+            <!-- End Content Navbar -->
+        </div>
 		<!-- Auxiliar Temporal Inputs's DIV -->
     	<div id='hidden-inputs-session'></div>
     	<!-- Auxiliar Temporal Inputs's DIV -->
@@ -86,6 +107,8 @@
 		<script src="../lib/forms.js"></script>
 		<script src="../lib/sha512.js"></script>
 		<!-- PLUGINS -->
+        <script src="../lib/plugins/waypoints.js"></script>
+        <script src="../lib/plugins/waypoints-sticky.js"></script>
 		<!-- CORE JS -->
         <?php /*
         <script src='js/min/core.min.js'></script>

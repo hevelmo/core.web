@@ -1,19 +1,19 @@
 /*
     Here are functions and methods that are models whose performance is used in all the Project
     to invoke some of this models it's necessary to call with the prefix, and then te name of the
-    model and its arguments, for example CAM.momentToHuman(date, language);
+    model and its arguments, for example COR.momentToHuman(date, language);
     Each method has a large explanation.
 
-    NOTE: the prefix CAM will change depends on the specific Project.
+    NOTE: the prefix COR will change depends on the specific Project.
 
     For the correct performance of almost all of the methods
     it's necesary to includ JQuery library
-**/
+ **/
 /* ################################################################################################### *\
 
     Project Name: core models
-    Proyect Version: 1.0
-    Author: *******
+    Proyect Version: 1.1
+    Author: Javier, Arturo
     Update: hevelmo
 
     CONTENT MODELS
@@ -22,6 +22,7 @@
             [FUNCTION] momentToRoman(date, language)
             [FUNCTION] momentToHuman(date, language)
         [MODELS] Handlebars's Models
+            [FUNCTION] getTemplate(name, filler)
             [FUNCTION] loadTemplate(name, wrapper, filler)
         [MODELS] DOM's Models
             [FUNCTION] getValue(domElement)
@@ -58,6 +59,8 @@
         [MODELS] STRING Models
             [FUNCTION] advancedTrim(string)
             [FUNCTION] replaceAll(string, found, replace)
+            [FUNCTION] ucWords(string)
+            [FUNCTION] ucFirst(string)
         [MODELS] OTHER Models
             [FUNCTION] picturesLoader(domElement, barElement, urlHandler, urlApi)
             [FUNCTION] randomString(name)
@@ -66,7 +69,6 @@
 \* ################################################################################################### */
 //[Models] Modelos
 var COR = {};
-
 COR = (function() {
     var $this = this;
     /*
@@ -80,42 +82,43 @@ COR = (function() {
      MOMENT's Models
      ###################################################################################################
     */
-        /*
-         *This function transforms a date in a friendly format to read to an human
-         *PARAMS:
-         *   date: Is a string with the date that will be transformed (mandatory).
-         *   language: Is the selected language (es, en, fr, etc) (mandatory).
+        /**
          *
-         *RETURN: string
-         *   New date fromat
-         *EXAMPLE:
-         *   '2015-02-16 17:18:00' is changed into 'Lunes, 16 de febrero de 2015, 5:18 PM'
-         *   It depends on the selected language
+         *  This function transforms a date in a friendly format to read to an human
          *
-         *SPECIAL REQUIREMENTS:
-         *   It's necesary to include 'moment.js' or 'moment.min.js' library before including 'model.js'
+         *  @param date - is a string with the date that will be transformed (mandatory).
+         *  @param languaje - is the selected language (es, en, fr, etc) (mandatory).
+         *
+         *  @return {string} New date format
+         *
+         *  @output
+         *      '2015-02-16 17:18:00' is changed into 'Lunes, 16 de febrero de 2015, 5:18 PM'
+         *      It depends on the selected language
+         *
+         *  @required
+         *      It's necesary to include 'moment.js' or 'moment.min.js' library before including 'model.js'
          *
         **/
             function momentToRoman(date, language) {
                 moment.lang(language);
                 return moment(date).format('dddd[,] LL');
             }
-        /*
-         *This function returns the time (in friendly human format)
-         *that has lapsed from an date in the past until now
+        /**
          *
-         *PARAMS:
-         *   date: Is a string with the date it will be calculated the lapsed thime (mandatory).
-         *   language: Is the selected language (es, en, fr, etc) (mandatory).
+         *  This function returns the time (in friendly human format)
+         *  that has lapsed from an date in the past until now
          *
-         *RETURN: string
-         *   Lapsed time in new format
-         *EXAMPLE:
-         *   From '2015-02-16 17:18:00' until now '2015-02-16 17:39:00' was 'hace 21 minutos'
-         *   It depends on the selected language
+         *  @param data - is a string with the date it will be calculated the lapsed thime (mandatory).
+         *  @param language - is the selected language (es, en, fr, etc) (mandatory).
          *
-         *SPECIAL REQUIREMENTS:
-         *   It's necesary to include 'moment.js' or 'moment.min.js' library before including 'model.js'
+         *  @return {string} Lapsed time in new format
+         *
+         *  @output
+         *      From '2015-02-16 17:18:00' until now '2015-02-16 17:39:00' was 'hace 21 minutos'
+         *      It depends on the selected language
+         *
+         *  @required
+         *      It's necesary to include 'moment.js' or 'moment.min.js' library before including 'model.js'
          *
         **/
             function momentToHuman(date, language) {
@@ -127,71 +130,86 @@ COR = (function() {
      Handlebars's Models
      ###################################################################################################
     */
-        /*
-         *This function loads a handlebars' template (previously compiled)
-         *in a specific element from the DOM
+        /**
          *
-         *PARAMS:
-         *   name: Is a string with the template's name (mandatory).
-         *   wrapper: Is a string with the id or class ('#domElement', '.domElement')
-         *            where the template will be loaded (mandatory).
-         *   filler: Is a JSON with the necesary dinamic info to be loaded in the template (optional).
+         *  This function generates a handlebars' template (previously compiled)
+         *  in a specific element from the DOM
          *
-         *SPECIAL REQUIREMENTS:
-         *   It's necesary to include 'handlebars.runtime.min.js' library and
-         *   'templates.min.js' generated by precomplileing
-         *   before including 'model.js'
+         *  @param {string} name - Is a string with the template's name (mandatory).
+         *  @param {JSON} filler - Is a JSON with the necesary dinamic info to be loaded in the template (optional).
+         *
+         *  @return {string} HTML value
+         *
+         *  @required
+         *      It's necesary to include 'handlebars.runtime.min.js' library and
+         *      'templates.min.js' generated by precomplileing
+         *      before including 'model.js'
+         *
+        **/
+            function getTemplate(name, filler) {
+                var template = Handlebars.templates[name];
+                return (filler) ? template(filler) : template;
+            }
+        /**
+         *
+         *  This function loads a handlebars' template (previously compiled)
+         *  in a specific element from the DOM
+         *
+         *  @param {string} name - Is a string with the template's name (mandatory).
+         *  @param {string} wrapper - Is a string with the id or class ('#domElement', '.domElement')
+         *                            where the template will be loaded (mandatory).
+         *  @param {JSON} filler - Is a JSON with the necesary dinamic info to be loaded in the template (optional).
+         *
+         *  @required
+         *      It's necesary to include 'handlebars.runtime.min.js' library and
+         *      'templates.min.js' generated by precomplileing
+         *      before including 'model.js'
          *
         **/
             function loadTemplate(name, wrapper, filler) {
-                var template = Handlebars.templates[name];
-                if (filler) {
-                    $(wrapper).html(template(filler));
-                } else {
-                    $(wrapper).html(template);
-                }
+                $(wrapper).html(getTemplate(name, filler));
             }
     /*
      ###################################################################################################
      DOM's Models
      ###################################################################################################
     */
-        /*
-         *This function gets the value from an especific DOM element
+        /**
          *
-         *PARAMS:
-         *   domElement: Is a string with the id or class ('#domElement', '.domElement')
-         *               of the DOM element whose value will be returned (mandatory).
-         *   new_value: Is a string with the value that will update 'domElement' vaue (mandatory).
+         *  This function gets the value from an especific DOM element
          *
-         *RETURN: string
-         *   domElement value
+         *  @param {string} domElement - Is a string with the id or class ('#domElement', '.domElement')
+         *                               of the DOM element whose value will be returned (mandatory).
+         *
+         *  @return {string} domElement value
+         *
         **/
             function getValue(domElement) {
                 return $(domElement).val();
             }
-        /*
-         *This function updates the value from an especific DOM element
+        /**
          *
-         *PARAMS:
-         *   domElement: Is a string with the id or class ('#domElement', '.domElement')
-         *               of the DOM element whose value will be updated (mandatory).
-         *   new_value: Is a string with the value that will update 'domElement' vaue (mandatory).
+         *  This function updates the value from an especific DOM element
+         *
+         *  @param {string} domElement - Is a string with the id or class ('#domElement', '.domElement')
+         *                               of the DOM element whose value will be updated (mandatory).
+         *  @param {string} newValue - Is a string with the value that will update 'domElement' value (mandatory).
+         *
         **/
-            function setValue(domElement, new_value) {
-                $(domElement).val(new_value);
+            function setValue(domElement, newValue) {
+                $(domElement).val(newValue);
             }
-        /*
-         *This function detects if value is or not defined by id or class
+        /**
          *
-         *PARAMS:
-         *   domElement: Is a string with the id or class ('#domElement', '.domElement')
-         *               of the DOM element whose value will be updated (mandatory).
-         *   new_value: Is a string with the value that will update 'domElement' vaue (mandatory).
+         *  This function detects if value is or not defined by id or class
          *
-         *RETURN: boolean
-         *   true: if it has value
-         *   false: if it doesnt have a value
+         *  @param {string} domElement - Is a string with the id or class ('#domElement', '.domElement')
+         *                               of the DOM element whose value will be updated (mandatory).
+         *  @param {string} newValue - Is a string with the value that will update 'domElement' vaue (mandatory).
+         *
+         *  @return {boolean}
+         *      true: if it has value
+         *      false: if it doesn't have a value
          *
         **/
             function exist(domElement) {
@@ -260,17 +278,17 @@ COR = (function() {
          *
         **/
             function cryptElement(domElement) {
-                var pass, pass_sha;
+                var pass, passSha;
                 pass = $(domElement).val();
-                pass_sha = hex_sha512(pass);
-                $(domElement).val(pass_sha);
+                passSha = hex_sha512(pass);
+                $(domElement).val(passSha);
             }
         /*
          *This function appends one new element to an existent domElement
          *
          *PARAMS:
          *   domElement: Is a string with the id or class ('#domElement', '.domElement')
-         *               of the element where we can append the new element (mandatory).
+         *               of the element where we can't append the new element (mandatory).
          *   newElType: Is a string with the html type (div, input, etc) of the element
          *              be careful it's a correct one, because the method doesn't
          *              doesn't distinguish is it's correct or not (mandatory).
@@ -332,7 +350,7 @@ COR = (function() {
          *
          *PARAMS:
          *   domElement: Is a string with the id or class ('#domElement', '.domElement')
-         *               of the element where we can append the new elements (mandatory).
+         *               of the element where we can't append the new elements (mandatory).
          *   elements: is an array of type [newElType, newElAttributes, newElContent, hasClosingTag]
          *             each one of this elements are explained in the appendOne method.
          *
@@ -484,10 +502,12 @@ COR = (function() {
          *            that wraps the 'DateTimePicker' calendar.
          *   futureDays: Is an integer with the number of days we want to advance
          *               from the current date.
-         *   hasMinDate: It a flag that determins if the calendar will have (1) or
-         *   (0) not a minimun date.
+         *   setterMode: It's a flag that determins the properties to be setted
+         *               0) Only date
+         *               1) Date and min date
+         *               2) Only min date
         **/
-            function setDateTPCalendar (wrapper, futureDays, hasMinDate) {
+            function setDateTPCalendar(wrapper, futureDays, setterMode) {
                 var today, yesterday, year, month, day, future;
                 today = new Date();
                 yesterday = new Date(today);
@@ -496,13 +516,18 @@ COR = (function() {
                 month =+ yesterday.getMonth();
                 month = month + 1;
                 day = yesterday.getDate();
-                future = year + '-' + month + '-' + day;
+                future = year + '-' + month + '-' + (+day + 1);
                 $(wrapper).datetimepicker({pickTime: false});
-                if (hasMinDate) {
-                    $(wrapper).data("DateTimePicker").setMinDate(yesterday);
-                    $(wrapper).data("DateTimePicker").setDate(future);
-                } else {
-                    $(wrapper).data("DateTimePicker").setDate(future);
+                switch(setterMode) {
+                    case 0:
+                        $(wrapper).data('DateTimePicker').setDate(future);
+                        break;
+                    case 1:
+                        $(wrapper).data('DateTimePicker').setMinDate(yesterday);
+                        $(wrapper).data('DateTimePicker').setDate(future);
+                        break;
+                    case 2:
+                        $(wrapper).data('DateTimePicker').setMinDate(yesterday);
                 }
             }
     /*
@@ -514,32 +539,38 @@ COR = (function() {
          *This function validates if an specific form is full
          *
          *PARAMS:
-         *   entered_inputs: Is a JSON with the entered inputs from the form (mandatory).
-         *   required_inputs_names: Is an array with the names of the required inputs from the form (mandatory).
+         *   enteredInputs: Is a JSON with the entered inputs from the form (mandatory).
+         *   requiredInputsNames: Is an array with the names of the required inputs from the form (mandatory).
          *
          *RETURN: boolean
             true: if it is full
             false: if it is not full
         **/
-            function validFormFull(entered_inputs, required_inputs_names) {
+            function validFormFull(enteredInputs, requiredInputsNames) {
                 var size;
-                size = _.size(_.compact(_.pick(entered_inputs, required_inputs_names)));
-                return (size === required_inputs_names.length) ? true : false;
+                for(var key in enteredInputs) {
+                    enteredInputs[key] = $.trim(enteredInputs[key]);
+                }
+                size = _.size(_.compact(_.pick(enteredInputs, requiredInputsNames)));
+                return (size === requiredInputsNames.length) ? true : false;
             }
         /*
          *This function validates if an specific form is not empty
          *
          *PARAMS:
-         *   entered_inputs: Is a JSON with the entered inputs from the form (mandatory).
-         *   required_inputs_names: Is an array with the names of the required inputs from the form (mandatory).
+         *   enteredInputs: Is a JSON with the entered inputs from the form (mandatory).
+         *   requiredInputsNames: Is an array with the names of the required inputs from the form (mandatory).
          *
          *RETURN: boolean
             true: if it is empty
             false: if it is not empty
         **/
-            function validFormEmpty(entered_inputs, required_inputs_names) {
+            function validFormEmpty(enteredInputs, requiredInputsNames) {
                 var size;
-                size = _.size(_.compact(_.pick(entered_inputs, required_inputs_names)));
+                for(var key in enteredInputs) {
+                    enteredInputs[key] = $.trim(enteredInputs[key]);
+                }
+                size = _.size(_.compact(_.pick(enteredInputs, requiredInputsNames)));
                 return (!size) ? true : false;
             }
         /*
@@ -564,19 +595,19 @@ COR = (function() {
          *It expects a JSON when it's succesful
          *
          *PARAMS:
-         *   custom_url: Is the url where 'json' will be sent (mandatory).
-         *   json: Is the JSON that will be sent to custom_url (mandatory).
+         *   customUrl: Is the url where 'json' will be sent (mandatory).
+         *   json: Is the JSON that will be sent to customUrl (mandatory).
          *
          *RETURN: $.ajax
             Shipping outcome.
             It doesn't have 'error' neither 'success' method, in order to customize the
             in every place where postalService is invoked
         **/
-            function postalService(custom_url, json) {
+            function postalService(customUrl, json) {
                 return $.ajax({
                     type: 'POST',
                     contentType: 'application/json',
-                    url: custom_url,
+                    url: customUrl,
                     dataType: "json",
                     data: JSON.stringify(json)
                 });
@@ -696,7 +727,7 @@ COR = (function() {
                 return _.reduce(
                         _.pluck(arrayObj, numKey),
                         function(sum, num) {
-                            return sum + num;
+                            return (+sum) + (+num);
                         }
                 );
             }
@@ -842,7 +873,7 @@ COR = (function() {
             function withoutArrayObjOR(arrayObj, withoutObj) {
                 pairs = _.pairs(withoutObj);
                 withoutArrayObj = [];
-                for (var idx=0; idx < pairs.length; idx++) {
+                for(var idx=0; idx < pairs.length; idx++) {
                     withoutArrayObj[idx] = new Object();
                     withoutArrayObj[idx][pairs[idx][0]] = pairs[idx][1];
                 }
@@ -851,7 +882,7 @@ COR = (function() {
                 }
                 return arrayObj;
             }
-        /*
+    /*
      ###################################################################################################
      NUMBER FORMATS's Models
      ###################################################################################################
@@ -870,9 +901,9 @@ COR = (function() {
          *   It's necesary to include 'sha512.js' library before including 'model.js'
         **/
             function currencyFormat(number) {
-                var formattedAuantity;
-                formattedAuantity = accounting.formatMoney(number);
-                return formattedAuantity;
+                var formattedQuantity;
+                formattedQuantity = accounting.formatMoney(number);
+                return formattedQuantity;
             }
         /*
          *This function transfors a numeric value in money format
@@ -963,6 +994,29 @@ COR = (function() {
                 return string.replace(expReg, replace);
             }
         /*
+         *
+        **/
+            function ucWords(string) {
+                var arrayWords, returnString, len, i;
+                arrayWords = string.split(" ");
+                len = arrayWords.length;
+                returnString = "";
+                for(i = 0; i < len; i++) {
+                    if(i != (len - 1)) {
+                        returnString = returnString + ucFirst(arrayWords[i]) + " ";
+                    } else {
+                        returnString = returnString + ucFirst(arrayWords[i]);
+                    }
+                }
+                return returnString;
+            }
+        /*
+         *
+        **/
+            function ucFirst(string){
+                return string.substr(0, 1).toUpperCase() + string.substr(1, string.length).toLowerCase();
+            }
+        /*
          *This function trims a string, also eliminates
          *all intermediate spaces between words, converting them into one.
          *
@@ -989,6 +1043,9 @@ COR = (function() {
      OTHER Models
      ###################################################################################################
     */
+        /*
+         *
+        **/
             function picturesLoader(domElement, barElement, urlHandler, urlApi) {
                 'use strict';
                 $(domElement).fileupload({
@@ -1028,14 +1085,14 @@ COR = (function() {
         **/
             function randomString(name) {
                 var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
-                var string_length = 4;
-                var randomstringb = '';
-                for (var i = 0; i < string_length; i++) {
+                var stringLength = 4;
+                var randomStrinGb = '';
+                for(var i = 0; i < stringLength; i++) {
                     var rnum = Math.floor(Math.random() * chars.length);
-                    randomstringb += chars.substring(rnum, rnum + 1);
+                    randomStrinGb += chars.substring(rnum, rnum + 1);
                 }
-                randomstringb;
-                $(name).val(randomstringb);
+                randomStrinGb;
+                $(name).val(randomStrinGb);
             }
     /*
      ###################################################################################################
@@ -1045,6 +1102,7 @@ COR = (function() {
     return {
                   momentToHuman : momentToHuman,
                   momentToRoman : momentToRoman,
+                    getTemplate : getTemplate,
                    loadTemplate : loadTemplate,
                        getValue : getValue,
                        setValue : setValue,
@@ -1074,7 +1132,9 @@ COR = (function() {
             roundNDecimalFormat : roundNDecimalFormat,
                    advancedTrim : advancedTrim,
                      replaceAll : replaceAll,
-                   randomString : randomString,
-                 picturesLoader : picturesLoader
+                        ucWords : ucWords,
+                        ucFirst : ucFirst,
+                 picturesLoader : picturesLoader,
+                   randomString : randomString
     }
 }());
