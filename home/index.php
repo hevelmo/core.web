@@ -53,37 +53,146 @@
                 }
             }
         </script>
+        <?php /*
+        <script src="../lib/modernizr.js"></script>
+        */ ?>
 	</head>
-	<body class="body">
-        <!--<a id="go-home">Inicio</a>
-        <a id="go-contact">Contacto</a>-->
-        <div class="site-header-wrapper">
-            <!-- Content Navbar -->
-            <div class="navbar">
-                <div class="container sp-cont">
-                    <div class="site-logo">
-                        <h1><a href="index.html"><img src="../img/logo/logo-large-2x.png" alt="Logo"></a></h1>
-                        <span class="site-tagline">Buying or Selling,<br>just got easier!</span>
-                    </div>
-                    <a class="visible-sm visible-xs" id="menu-toggle">
-                        <i class="fa fa-bars"></i>
+	<body class="sitio" id="index">
+
+        <!-- Template Wrapper Navbar -->
+        <div class="wrapper_content_navbar" id="start-site-header">
+            <header id="content-start-site-navbar" class="navbar navigation-bar-header nav-content">
+                <div class="container container-site sp-cont">
+                    <a href="#" class="visible-sm visible-xs mobile-toggle" id="menu-toggle">
+                        <div class="bar-1"></div>
+                        <div class="bar-2"></div>
+                    </a>
+                    <a href="#" class="visible-xs-home-link visible-sm visible-xs" id="go-home-logo-resp">
+                        <img src="../img/logo/logo-large-2x.png" alt="Logo Land Rover" class="logo">
                     </a>
                     <!-- Main Navigation -->
-                    <nav class="main-navigation dd-menu toggle-menu" role="navigation">
-                        <ul class="sf-menu">
-                        </ul>
+                    <nav class="main-navigation toggle-menu navigation-bar no-print clearfix" rol="navigation">
+                        <div class="block-logo clearfix">
+                            <a href="#" class="home-link main-navigation-home-link no-print" id="go-home-logo">
+                                <img src="../img/logo/logo-large-2x.png" alt="Logo Land Rover" class="logo no-print">
+                                <span class="primary-text">Guadalajara y Country</span>
+                            </a>
+                        </div>
+                        <div class="block-nav">
+                            <ul class="sf-menu navigation-bar no-print">
+                                <li>
+                                    <a href="#" class="menu-toggle-close" id="go-home">Inicio</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu-toggle-close" id="go-vehicles">Vehículos</a>
+                                    <div class="model-select-block">
+                                        <div class="inner-nav">
+                                            <ul class="inner-model inner-menu" rol="menu">
+                                                <li class="model-list">
+                                                    <a href="#" class="model-link" id="model-defender">
+                                                        <img src="../img/modelos/small/defender.png" width="130" height="75" alt="Modelo Defender">
+                                                        <span class="model defender">Defender</span>
+                                                    </a>
+                                                </li>
+                                                <li class="model-list">
+                                                    <a href="#" class="model-link" id="model-discovery-sport">
+                                                        <img src="../img/modelos/small/discovery-sport.png" width="130" height="75" alt="Modelo Discorey Sport">
+                                                        <span class="model discovery-sport">Discovery Sport</span>
+                                                    </a>
+                                                </li>
+                                                <li class="model-list">
+                                                    <a href="#" class="model-link" id="model-discovery">
+                                                        <img src="../img/modelos/small/discovery.png" width="130" height="75" alt="Modelo Discorey">
+                                                        <span class="model discovery">Discovery</span>
+                                                    </a>
+                                                </li>
+                                                <li class="model-list">
+                                                    <a href="#" class="model-link" id="model-range-rover-evoque">
+                                                        <img src="../img/modelos/small/range-rover-evoque.png" width="130" height="75" alt="Modelo Range Rover Evoque">
+                                                        <span class="model range-rover-evoque">Range Rover Evoque</span>
+                                                    </a>
+                                                </li>
+                                                <li class="model-list">
+                                                    <a href="#" class="model-link" id="model-range-rover-sport">
+                                                        <img src="../img/modelos/small/range-rover-sport.png" width="130" height="75" alt="Modelo Range Rover Sport">
+                                                        <span class="model range-rover-sport">Range Rover Sport</span>
+                                                    </a>
+                                                </li>
+                                                <li class="model-list">
+                                                    <a href="#" class="model-link" id="model-range-rover">
+                                                        <img src="../img/modelos/small/range-rover.png" width="130" height="75" alt="Modelo Range Rover">
+                                                        <span class="model range-rover">Range Rover</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu-toggle-close" id="go-news">Noticias</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu-toggle-close" id="go-services">Servicios</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="menu-toggle-close" id="go-agencies">Agencias</a>
+                                    <ul class="inner-agencie inner-menu" rol="menu">
+                                        <li class="agencie-list">
+                                            <a href="#" id="agencie-gdl" class="agencie-link">
+                                                <div class="agencie-title agencie">
+                                                    <span class="agencie">Land Rover GDL</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="agencie-list">
+                                            <a href="#" id="agencie-country" class="agencie-link">
+                                                <div class="agencie-title agencie">
+                                                    <span class="agencie">Land Rover Country</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="agencie-list">
+                                            <a href="#" id="schedule-test.drive" class="agencie-link">
+                                                <div class="agencie-title agencie">
+                                                    <span class="agencie">Prueba de Manejo</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="block-socials">
+                            <ul class="social-links">
+                                <li>
+                                    <a href="https://www.facebook.com/LandroverGDL" target="_blank"><i class="social_facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/LandRoverGDL" target="_blank"><i class="social_twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UC-ZX8q42L4v0D_xXc_D4_lg" target="_blank"><i class="social_youtube"></i></a>
+                                </li>
+                                <li>
+                                    <a href="http://instagram.com/LandRoverGuadalajara" target="_blank"><i class="social_instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
                     </nav>
-                    <!-- End Main Navigation -->
                 </div>
-            </div>
-            <!-- End Content Navbar -->
+            </header>
         </div>
+
+        <?php /*
+        <!--<a id="go-home">Inicio</a>
+        <a id="go-contact">Contacto</a>-->
 		<!-- Auxiliar Temporal Inputs's DIV -->
     	<div id='hidden-inputs-session'></div>
     	<!-- Auxiliar Temporal Inputs's DIV -->
     	<div id='hidden-inputs-temporal'></div>
     	<!--Templates's DIV-->
     	<div class="wrapper_content_interactive_home" id='content-temporal-interactive-home'></div>
+        */ ?>
 
 		<!-- MAIN -->
 		<script src="../lib/jquery.js"></script>

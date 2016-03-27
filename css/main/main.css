@@ -3,7 +3,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     margin: 0;
     padding: 0;
     border: 0;
-    font: inherit;
+    font-family: sans-serif;
     font-size: 100%;
 }
 /* HTML5 display-role reset for older browsers */
@@ -51,7 +51,7 @@ html, hmtl a{
     -ms-text-size-adjust: 100%;
 }
 a{
-    color:#5e5e5e;
+    color:#fff;
     text-decoration: none;
     cursor: pointer;
     -webkit-transition:all 0.3s ease 0.2s;
@@ -183,7 +183,7 @@ h2 small{
     display:block;
     letter-spacing:.1em;
     text-transform:uppercase;
-    font-size:45%
+    font-size:45%;
 }
 h3{
     font-size:24px;
@@ -237,4 +237,87 @@ blockquote cite:before{
 }
 p{
     margin:0 0 18px 0;
+}
+*::selection {
+    background-color: #272727;
+    color: #fff;
+    text-shadow: none;
+}
+.font-sans-serif {
+    font-family: sans-serif;
+}
+.font-avenir {
+    font-family: Avenir,sans-serif;
+}
+.mso .font-avenir {
+    font-family: sans-serif!important;
+}
+.font-lato {
+    font-family: Lato,Tahoma,sans-serif;
+}
+.mso .font-lato {
+    font-family: Tahoma,sans-serif!important;
+}
+.font-cabin {
+    font-family: Cabin,Avenir,sans-serif;
+}
+.mso .font-cabin {
+    font-family: sans-serif!important;
+}
+.font-open-Sans {
+    font-family: 'Open Sans',sans-serif;
+}
+.mso .font-open-Sans {
+    font-family: sans-serif!important;
+}
+.font-roboto {
+    font-family: Roboto,Tahoma,sans-serif;
+}
+.mso .font-roboto {
+    font-family: Tahoma,sans-serif!important;
+}
+.font-ubuntu {
+    font-family: Ubuntu,sans-serif;
+}
+.mso .font-ubuntu {
+    font-family: sans-serif!important;
+}
+.font-pt-sans {
+    font-family: 'PT Sans','Trebuchet MS',sans-serif;
+}
+.mso .font-pt-sans {
+    font-family: 'Trebuchet MS',sans-serif!important;
+}
+.font-georgia {
+    font-family: Georgia,serif;
+}
+.font-merriweather {
+    font-family: Merriweather,Georgia,serif;
+}
+.mso .font-merriweather {
+    font-family: Georgia,serif!important;
+}
+.font-bitter {
+    font-family: Bitter,Georgia,serif;
+}
+.mso .font-bitter {
+    font-family: Georgia,serif!important;
+}
+.font-pt-serif {
+    font-family: 'PT Serif',Georgia,serif;
+}
+.mso .font-pt-serif {
+    font-family: Georgia,serif!important;
+}
+.font-pompiere {
+    font-family: Pompiere,'Trebuchet MS',sans-serif;
+}
+.mso .font-pompiere {
+    font-family: 'Trebuchet MS',sans-serif!important;
+}
+.font-roboto-slab {
+    font-family: 'Roboto Slab',Georgia,serif;
+}
+.mso .font-roboto-slab {
+    font-family: Georgia,serif!important;
 }

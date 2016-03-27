@@ -154,7 +154,7 @@
     var sticky_wrapper_methods = {
         sticky_wrapper: function() {
             $('.navbar').waypoint('sticky', {
-                wrapper: '<div class="sticky-wrapper" />',
+                wrapper: '<div class="sticky-wrapper sticky-header" />',
                 stuckClass: 'sticky'
             });
         }
@@ -294,13 +294,13 @@
             if ($(this).is(':checked')) {
                 $(this).parent('.label-checkbox').find(':checkbox').attr('checked', true);
                 $(this).parent('.label-checkbox').addClass('checkbox-checked');
-                $(this).val('on');
+                $(this).val('1');
                 $('#contact_subscription').val('Activado');
                 $('#test_drive_model_subscription').val('Activado');
             } else {
                 $(this).parent('label').find(':checkbox').attr('checked', false);
                 $(this).parent('label').removeClass('checkbox-checked');
-                $(this).val('off');
+                $(this).val('0');
                 $('#contact_subscription').val('Desactivado');
                 $('#test_drive_model_subscription').val('Desactivado');
             }

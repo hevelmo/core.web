@@ -1,0 +1,33 @@
+/* LAND ROVER FONT */
+@font-face {
+    font-family: 'font_name_landrover_bold';
+    src: url('LandRoverBold.eot');
+    src: url('LandRoverBold.eot') format('embedded-opentype'),
+         url('LandRoverBold.woff') format('woff'),
+         url('LandRoverBold.ttf') format('truetype'),
+         url('LandRoverBold.svg#LandRoverBold') format('svg');
+}
+@font-face {
+    font-family: 'font_name_landrover_demi';
+    src: url('LandRoverDemi.eot');
+    src: url('LandRoverDemi.eot') format('embedded-opentype'),
+         url('LandRoverDemi.woff') format('woff'),
+         url('LandRoverDemi.ttf') format('truetype'),
+         url('LandRoverDemi.svg#LandRoverDemi') format('svg');
+}
+@font-face {
+    font-family: 'font_name_landrover_medium';
+    src: url('LandRoverMedium.eot');
+    src: url('LandRoverMedium.eot') format('embedded-opentype'),
+         url('LandRoverMedium.woff') format('woff'),
+         url('LandRoverMedium.ttf') format('truetype'),
+         url('LandRoverMedium.svg#LandRoverMedium') format('svg');
+}
+@font-face {
+    font-family: 'font_name_landrover_light';
+    src: url('LandRoverLight.eot');
+    src: url('LandRoverLight.eot') format('embedded-opentype'),
+         url('LandRoverLight.woff') format('woff'),
+         url('LandRoverLight.ttf') format('truetype'),
+         url('LandRoverLight.svg#LandRoverLight') format('svg');
+}

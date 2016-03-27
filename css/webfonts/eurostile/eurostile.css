@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'EurostileBold';
+    src: url('EurostileBold.eot');
+    src: url('EurostileBold.eot') format('embedded-opentype'),
+         url('EurostileBold.woff') format('woff'),
+         url('EurostileBold.ttf') format('truetype'),
+         url('EurostileBold.svg#EurostileBold') format('svg');
+}
+@font-face {
+    font-family: 'EurostileDemiOblique';
+    src: url('EurostileDemiOblique.eot');
+    src: url('EurostileDemiOblique.eot') format('embedded-opentype'),
+         url('EurostileDemiOblique.woff') format('woff'),
+         url('EurostileDemiOblique.ttf') format('truetype'),
+         url('EurostileDemiOblique.svg#EurostileDemiOblique') format('svg');
+}
+@font-face {
+    font-family: 'EurostileBoldCondensed';
+    src: url('EurostileBoldCondensed.eot');
+    src: url('EurostileBoldCondensed.eot') format('embedded-opentype'),
+         url('EurostileBoldCondensed.woff') format('woff'),
+         url('EurostileBoldCondensed.ttf') format('truetype'),
+         url('EurostileBoldCondensed.svg#EurostileBoldCondensed') format('svg');
+}
+@font-face {
+    font-family: 'EurostileBoldExtendedTwo';
+    src: url('EurostileBoldExtendedTwo.eot');
+    src: url('EurostileBoldExtendedTwo.eot') format('embedded-opentype'),
+         url('EurostileBoldExtendedTwo.woff') format('woff'),
+         url('EurostileBoldExtendedTwo.ttf') format('truetype'),
+         url('EurostileBoldExtendedTwo.svg#EurostileBoldExtendedTwo') format('svg');
+}
+@font-face {
+    font-family: 'EurostileBoldOblique';
+    src: url('EurostileBoldOblique.eot');
+    src: url('EurostileBoldOblique.eot') format('embedded-opentype'),
+         url('EurostileBoldOblique.woff') format('woff'),
+         url('EurostileBoldOblique.ttf') format('truetype'),
+         url('EurostileBoldOblique.svg#EurostileBoldOblique') format('svg');
+}
+@font-face {
+    font-family: 'EurostileDemi';
+    src: url('EurostileDemi.eot');
+    src: url('EurostileDemi.eot') format('embedded-opentype'),
+         url('EurostileDemi.woff') format('woff'),
+         url('EurostileDemi.ttf') format('truetype'),
+         url('EurostileDemi.svg#EurostileDemi') format('svg');
+}
+@font-face {
+    font-family: 'EurostileDemiOblique';
+    src: url('EurostileDemiOblique.eot');
+    src: url('EurostileDemiOblique.eot') format('embedded-opentype'),
+         url('EurostileDemiOblique.woff') format('woff'),
+         url('EurostileDemiOblique.ttf') format('truetype'),
+         url('EurostileDemiOblique.svg#EurostileDemiOblique') format('svg');
+}
+@font-face {
+    font-family: 'EurostileNormal';
+    src: url('EurostileNormal.eot');
+    src: url('EurostileNormal.eot') format('embedded-opentype'),
+         url('EurostileNormal.woff') format('woff'),
+         url('EurostileNormal.ttf') format('truetype'),
+         url('EurostileNormal.svg#EurostileNormal') format('svg');
+}
+@font-face {
+    font-family: 'EurostileRoman';
+    src: url('EurostileRoman.eot');
+    src: url('EurostileRoman.eot') format('embedded-opentype'),
+         url('EurostileRoman.woff') format('woff'),
+         url('EurostileRoman.ttf') format('truetype'),
+         url('EurostileRoman.svg#EurostileRoman') format('svg');
+}

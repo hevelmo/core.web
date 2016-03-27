@@ -1,12 +1,16 @@
 .navbar{
-    background:rgba(255,255,255,.9);
+    background-color: #393939;
+    background-image: url(../../img/texture/texture-darkest-grey.png);
+    background-repeat: repeat;
+    background-position: left top;
+    clear: both;
     margin-bottom:0;
     min-height:inherit;
     position:relative;
     z-index:3;
     -webkit-border-radius:0;
     border-radius:0;
-    height:52px;
+    height:auto;
     box-shadow:0 1px 2px rgba(0,0,0,.1);
     color:#777;
     -webkit-transition:all 0.3s ease 0.2s;
@@ -16,8 +20,8 @@
     transition:all 0.3s ease 0.1s;
 }
 .sticky-header .navbar{
-    box-shadow:0 3px 5px rgba(0,0,0,.1);
-    background:#fff;
+    box-shadow:0 3px 5px rgba(0,0,0,.5);
+    background:#393939;
     -webkit-transition: box-shadow 0.1s linear 0s, background 0.1s linear 0s;
     -moz-transition: box-shadow 0.1s linear 0s, background 0.1s linear 0s;
     -ms-transition: box-shadow 0.1s linear 0s, background 0.1s linear 0s;
@@ -52,33 +56,69 @@
 .main-navigation{
     display:block;
 }
-.main-navigation > ul{
+.main-navigation .block-logo,
+.main-navigation .block-nav,
+.main-navigation .block-socials {
+    float: left;
+    vertical-align: middle;
+}
+.main-navigation .block-nav > ul{
     margin:0;
     list-style-type:none;
 }
-.main-navigation > ul > li{
+.main-navigation .block-nav > ul > li{
     font-weight:400;
     font-size:15px;
     position:relative;
     display:inline-block;
     margin-right:35px;
 }
-.main-navigation > ul > li > a{
+.main-navigation .block-nav > ul > li > a{
     display:block;
     color:#666;
     line-height:52px;
 }
-.main-navigation > ul > li:last-child{
+.main-navigation .block-nav > ul > li:last-child{
     margin-right:0;
 }
-.main-navigation > ul > li:last-child a{
+.main-navigation .block-nav > ul > li:last-child a{
 }
-.main-navigation > ul > li > a > i{
+.main-navigation .block-nav > ul > li > a > i{
     color:#999;
 }
-.sticky-header .main-navigation > ul > li > a > i{
+.sticky-header .main-navigation .block-nav > ul > li > a > i{
     color:#999;
 }
-.main-navigation > ul > li > a:hover{
+.main-navigation .block-nav > ul > li > a:hover{
     text-decoration:none;
+}
+
+
+
+.main-navigation .block-logo .home-link {
+    /*float: left;*/
+}
+.main-navigation .block-logo .home-link:before {
+    font-family: 'EurostileDemi','Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: absolute;
+    content: 'above & beyond';
+    top: 62px;
+    left: 11px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #fff;
+}
+.main-navigation .block-logo .home-link .logo {
+    height: 55px;
+    margin: 5px auto;
+}
+.main-navigation .block-logo .home-link span {
+    font-family: 'font_name_landrover_demi','Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: absolute;
+    font-size: 1.35em;
+    top: 19px;
+    left: 10.5%;
+    color: #fff;
 }

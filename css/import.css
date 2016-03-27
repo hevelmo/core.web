@@ -25,10 +25,14 @@
 		[styles] 'navigation'
 	\* ------------------------------------------------------ */
 		@import url(styles/navigation.css);
+		@import url(styles/globa-helpers-classes.css);
 	/* ------------------------------------------------------ *\
 		[styles] 'webfonts'
 	\* ------------------------------------------------------ */
 		@import url(webfonts/fontawesome/fontawesome.css);
+		@import url(webfonts/elegant-icons/elegant-icons.css);
+		@import url(webfonts/land-rover/land-rover.css);
+		@import url(webfonts/eurostile/eurostile.css);
 /* ################################################################################################### *\
 	END CONTENT
 \* ################################################################################################### */

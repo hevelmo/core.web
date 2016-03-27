@@ -1,0 +1,13 @@
+body {
+    background-color: #ddd;
+    background-image: url(../../img/texture/texture-grey-mist-light.png);
+    background-repeat: repeat;
+    background-position: left top;
+    clear: both;
+    font-family: 'font_name_landrover_light','Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: #777;
+    font-size: 14px;
+    line-height: 24px;
+}
